@@ -1,0 +1,78 @@
+1:
+
+SELECT productVendor, COUNT(*) as total_products
+FROM products
+GROUP by productVendor 
+ORDER BY total_products
+;
+
+
+2:
+
+SELECT status, count(*) as total_orders 
+FROM orders
+GROUP BY status
+;
+
+3:
+
+SELECT salesRepEmployeeNumber, AVG(creditLimit) as average
+FROM customers
+GROUP BY salesRepEmployeeNumber
+;
+
+
+4:
+
+SELECT country, min(creditLimit) , max(creditLimit)
+FROM customers
+GROUP BY country
+;
+
+
+5:
+
+SELECT officeCode, COUNT(*) as total_emploees
+FROM employees
+GROUP BY officeCode
+
+
+6:
+
+SELECT customerNumber, AVG(amount) as average_amount
+FROM payments
+GROUP BY customerNumber
+order BY average_amount DESC
+;
+
+
+7:
+
+SELECT productVendor, AVG(buyPrice) as average_price
+FROM products
+GROUP BY productVendor
+;
+
+
+8:
+
+SELECT salesRepEmployeeNumber, COUNT(customerNumber) as sum_customers
+FROM customers
+GROUP BY salesRepEmployeeNumber
+
+9:
+
+SELECT orderDate, COUNT(orderNumber) as sum_orders
+FROM orders
+GROUP BY orderDate
+order by sum_orders DESC
+LIMIT 1
+
+
+SELECT productScale, COUNT(*) as sum_product
+FROM products
+GROUP BY productScale
+
+
+
+
